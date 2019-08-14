@@ -4,7 +4,6 @@ from pprint import pprint
 from flask import Flask
 
 app = Flask(__name__)
-print("Starting")
 
 @app.route("/")
 def index():
@@ -36,8 +35,3 @@ def latest_tle(satellite_id):
 	tle = resp.text
 
 	return tle
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-print("Done")

@@ -6,5 +6,7 @@ COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 ENV FLASK_APP main.py
 RUN pip install -r requirements.txt
+EXPOSE 80
+EXPOSE 5000
 COPY . /app
-CMD flask run --host=127.0.0.1 --port=80
+CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
